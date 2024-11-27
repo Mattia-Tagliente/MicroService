@@ -20,6 +20,9 @@ public class User {
     @Column(name = "user_id")
     private int userId;
 
+    @Column(name = "user_username")
+    private String username;
+
     @Column(name = "user_name")
     private String userName;
 
@@ -60,6 +63,14 @@ public class User {
 
     public void setUserId(int userId) {
         this.userId = userId;
+    }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     public String getUserName() {

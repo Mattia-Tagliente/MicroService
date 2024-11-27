@@ -5,6 +5,7 @@ USE fake_thcs;
 
 CREATE TABLE user(
     user_id INT NOT NULL AUTO_INCREMENT,
+    user_username VARCHAR(50) NOT NULL,
     user_name VARCHAR(30) NOT NULL,
     user_surname VARCHAR(30) NOT NULL,
     user_email VARCHAR(255) NOT NULL, 
@@ -17,7 +18,7 @@ CREATE TABLE user(
     FOREIGN KEY(customer_id) REFERENCES customer(customer_id),
     admin_role BIT NOT NULL,
     PRIMARY KEY(user_id),
-    UNIQUE(user_email,codice_fiscale)
+    UNIQUE(user_email,codice_fiscale, user_username)
 )
 
 
