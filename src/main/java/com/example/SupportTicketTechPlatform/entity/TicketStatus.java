@@ -1,7 +1,6 @@
 package com.example.SupportTicketTechPlatform.entity;
 
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.EmbeddedId;
