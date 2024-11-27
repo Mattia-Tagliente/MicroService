@@ -10,7 +10,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
 
 @Entity
@@ -19,14 +18,14 @@ public class TicketResolution {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "resolution_id")
+    @Column(name ="resolution_id")
     private int resolutionId;
 
     @ManyToOne
     @JoinColumn(name = "ticket_id", nullable = false)
     private Ticket ticket;
 
-    @OneToOne
+    @ManyToOne
     @JoinColumn(name = "task_type", nullable = false)
     private TaskType taskType;
 
@@ -36,14 +35,9 @@ public class TicketResolution {
     @Column(name = "post_date", nullable = false)
     private Timestamp postDate;
 
-    @Column(name = "admin_name", nullable = false)
-    private String adminName;
-
-    @Column(name = "admin_surname", nullable = false)
-    private String adminSurname;
-
-    @Column(name = "admin_email", nullable = false)
-    private String adminEmail;
+    @ManyToOne
+    @JoinColumn(name = "admin_id", nullable = false)
+    private User admin;
 
     public TicketResolution() {
     }
@@ -88,28 +82,12 @@ public class TicketResolution {
         this.postDate = postDate;
     }
 
-    public String getAdminName() {
-        return adminName;
+    public User getAdmin() {
+        return admin;
     }
 
-    public void setAdminName(String adminName) {
-        this.adminName = adminName;
-    }
-
-    public String getAdminSurname() {
-        return adminSurname;
-    }
-
-    public void setAdminSurname(String adminSurname) {
-        this.adminSurname = adminSurname;
-    }
-
-    public String getAdminEmail() {
-        return adminEmail;
-    }
-
-    public void setAdminEmail(String adminEmail) {
-        this.adminEmail = adminEmail;
+    public void setAdmin(User admin) {
+        this.admin = admin;
     }
 
     
