@@ -13,18 +13,11 @@ CREATE TABLE user(
     phone_number VARCHAR(15) NOT NULL,
     registration_date TIMESTAMP NOT NULL,
     last_login TIMESTAMP NOT NULL,
+    customer_id INT NULL,
+    FOREIGN KEY(customer_id) REFERENCES customer(customer_id),
     admin_role BIT NOT NULL,
     PRIMARY KEY(user_id),
     UNIQUE(user_email,codice_fiscale)
-)
-
-
-CREATE TABLE customer_account(
-    user_id INT NOT NULL,
-    FOREIGN KEY(user_id) REFERENCES user(user_id),
-    customer_id INT NOT NULL,
-    FOREIGN KEY(customer_id) REFERENCES customer(customer_id),
-    PRIMARY KEY (user_id, customer_id)
 )
 
 
@@ -65,13 +58,15 @@ CREATE TABLE ticket_status(
     FOREIGN KEY(ticket_id) REFERENCES ticket(ticket_id),
     status_type INT NOT NULL,
     FOREIGN KEY(status_type) REFERENCES ticket_status_type(type_id),
+    status_date TIMESTAMP NOT NULL,
     PRIMARY KEY(ticket_id, status_type)
-
 )
 
 CREATE TABLE ticket_resolution(
 
     resolution_id INT NOT NULL AUTO_INCREMENT,
+    ticket_id INT NOT NULL,
+    FOREIGN KEY(ticket_id) REFERENCES ticket(ticket_id),
     task_type INT NOT,
     FOREIGN KEY(task_type) REFERENCES task_type(task_id),
     resolution_post VARCHAR(255) NOT NULL,
