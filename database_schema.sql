@@ -50,6 +50,7 @@ CREATE TABLE ticket(
     FOREIGN KEY(ticket_customer) REFERENCES customer(customer_id),
     ticket_name VARCHAR(30) NOT NULL,
     ticket_description VARCHAR(255) NOT NULL,
+    ticket_issue_date TIMESTAMP NOT NULL,
     PRIMARY KEY(ticket_id),
     UNIQUE(ticket_code)
 )
