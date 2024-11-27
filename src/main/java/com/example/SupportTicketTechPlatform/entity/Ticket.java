@@ -1,5 +1,6 @@
 package com.example.SupportTicketTechPlatform.entity;
 
+import java.sql.Timestamp;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -34,6 +35,9 @@ public class Ticket {
 
     @Column(name = "ticket_description", nullable = false)
     private String ticketDescription;
+
+    @Column(name = "ticket_issue_date", nullable = false)
+    private Timestamp issueDate;
 
     @OneToMany(mappedBy = "ticket", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<TicketResolution> resolutions = new ArrayList<>();
