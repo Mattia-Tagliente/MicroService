@@ -1,5 +1,6 @@
 package com.example.SupportTicketTechPlatform.entity;
 
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Column;
@@ -28,7 +29,7 @@ public class TicketStatus {
     private StatusType statusType;
 
     @Column(name = "status_date", nullable = false)
-    private LocalDateTime timestamp;
+    private Timestamp postDate;
 
     public TicketStatus() {
     }
@@ -57,12 +58,12 @@ public class TicketStatus {
         this.statusType = statusType;
     }
 
-    public LocalDateTime getTimestamp() {
-        return timestamp;
+    public Timestamp  getTimestamp() {
+        return postDate;
     }
 
-    public void setTimestamp(LocalDateTime timestamp) {
-        this.timestamp = timestamp;
+    public void setTimestamp(Timestamp postDate) {
+        this.postDate = postDate;
     }
 
     
