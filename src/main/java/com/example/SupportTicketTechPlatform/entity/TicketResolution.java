@@ -19,6 +19,7 @@ public class TicketResolution {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "resolution_id")
     private int resolutionId;
 
     @ManyToOne
