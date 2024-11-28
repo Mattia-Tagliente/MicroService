@@ -57,11 +57,11 @@ public class TicketStatus {
         this.statusType = statusType;
     }
 
-    public Timestamp  getTimestamp() {
+    public Timestamp  getPostDate() {
         return postDate;
     }
 
-    public void setTimestamp(Timestamp postDate) {
+    public void setPostDate(Timestamp postDate) {
         this.postDate = postDate;
     }
 
