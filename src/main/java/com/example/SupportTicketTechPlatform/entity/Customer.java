@@ -17,10 +17,10 @@ public class Customer {
     private int customerId;
 
     @Column(name = "denominazione_sociale")
-    private String denominazioneSociale;
+    private String companyName;
 
     @Column(name = "partita_iva")
-    private String partitaIva;
+    private String vatNumber;
 
     public Customer() {
     }
@@ -33,20 +33,20 @@ public class Customer {
         this.customerId = customerId;
     }
 
-    public String getDenominazioneSociale() {
-        return denominazioneSociale;
+    public String getCompanyName() {
+        return companyName;
     }
 
-    public void setDenominazioneSociale(String denominazioneSociale) {
-        this.denominazioneSociale = denominazioneSociale;
+    public void setCompanyName(String companyName) {
+        this.companyName = companyName;
     }
 
-    public String getPartitaIva() {
-        return partitaIva;
+    public String getVatNumber() {
+        return vatNumber;
     }
 
-    public void setPartitaIva(String partitaIva) {
-        this.partitaIva = partitaIva;
+    public void setVatNumber(String vatNumber) {
+        this.vatNumber = vatNumber;
     }
 
 }
