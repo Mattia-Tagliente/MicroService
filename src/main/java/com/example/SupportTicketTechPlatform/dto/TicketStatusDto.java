@@ -18,12 +18,12 @@ public class TicketStatusDto {
         this.statusType = statusType;
     }
 
-    public Timestamp getTimestamp() {
+    public Timestamp getPostDate() {
         return postDate;
     }
 
-    public void setTimestamp(Timestamp timestamp) {
-        this.postDate = timestamp;
+    public void setTimestamp(Timestamp postDate) {
+        this.postDate = postDate;
     }
 
     
