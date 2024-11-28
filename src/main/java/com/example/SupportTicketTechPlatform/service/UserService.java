@@ -69,13 +69,16 @@ public class UserService {
         return userMapper.toUserDto(userRepository.findAll());
     }
 
-    public UserDetailsDto getUser(String usernameOrEmail, String password){
+    public Optional<UserDetailsDto> getUser(String usernameOrEmail, String password){
 
-        Optional<User> userOptional = userRepository.findUserByNameAndPassword(usernameOrEmail, password);
+        Optional<User> entity = userRepository.findUserByNameAndPassword(usernameOrEmail, password);
 
-        return userMapper.toUserDetailsDto(
-            userOptional.get()
-        );
+        if (entity.isPresent()){
+            UserDetailsDto user = userMapper.toUserDetailsDto(entity.get());
+            return Optional.of(user);
+        }else {
+            return Optional.empty();
+        }
 
     }
 
