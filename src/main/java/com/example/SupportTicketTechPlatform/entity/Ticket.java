@@ -96,6 +96,22 @@ public class Ticket {
         this.resolutions = resolutions;
     }
 
+    public Timestamp getIssueDate() {
+        return issueDate;
+    }
+
+    public void setIssueDate(Timestamp issueDate) {
+        this.issueDate = issueDate;
+    }
+
+    public List<TicketStatus> getStatuses() {
+        return statuses;
+    }
+
+    public void setStatuses(List<TicketStatus> statuses) {
+        this.statuses = statuses;
+    }
+
     
 
 }
