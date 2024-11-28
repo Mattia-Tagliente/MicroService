@@ -9,7 +9,6 @@ public class UserDetailsDto {
     private String userSurname;
     private String userEmail;
     private String codiceFiscale;
-    private String userPassword;
     private String phoneNumber;
     private Timestamp registrationDate;
     private Timestamp lastLogin;
@@ -56,14 +55,6 @@ public class UserDetailsDto {
 
     public void setCodiceFiscale(String codiceFiscale) {
         this.codiceFiscale = codiceFiscale;
-    }
-
-    public String getUserPassword() {
-        return userPassword;
-    }
-
-    public void setUserPassword(String userPassword) {
-        this.userPassword = userPassword;
     }
 
     public String getPhoneNumber() {
