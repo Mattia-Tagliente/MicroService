@@ -54,22 +54,6 @@ public class UserMapper {
 
     }
 
-    public UserDto toUserDto(User user){
-
-        UserDto userDto = new UserDto();
-
-        Customer userCustomer = user.getCustomer();
-
-        userDto.setCodiceFiscale(user.getCodiceFiscale());
-        userDto.setCompanyName(userCustomer.getDenominazioneSociale());
-        userDto.setPhoneNumber(user.getPhoneNumber());
-        userDto.setUserEmail(user.getPhoneNumber());
-        userDto.setUserName(user.getUserName());
-        userDto.setUserSurname(user.getUserSurname());
-
-        return userDto;
-
-    }
 
     public UserDetailsDto toUserDetailsDto(User user){
 
@@ -97,9 +81,13 @@ public class UserMapper {
 
                     UserDto userDto = new UserDto();
                     userDto.setCodiceFiscale(user.getCodiceFiscale());
-                    userDto.setCompanyName(userCustomer.getDenominazioneSociale());
+                    if (userCustomer != null){
+                        userDto.setCompanyName(userCustomer.getDenominazioneSociale());
+                    } else {
+                        userDto.setCompanyName(null);
+                    }
                     userDto.setPhoneNumber(user.getPhoneNumber());
-                    userDto.setUserEmail(user.getPhoneNumber());
+                    userDto.setUserEmail(user.getUserEmail());
                     userDto.setUserName(user.getUserName());
                     userDto.setUserSurname(user.getUserSurname());
                     return userDto;
