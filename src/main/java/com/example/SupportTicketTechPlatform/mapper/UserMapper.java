@@ -65,7 +65,6 @@ public class UserMapper {
         userDto.setPhoneNumber(user.getPhoneNumber());
         userDto.setUserEmail(user.getPhoneNumber());
         userDto.setUserName(user.getUserName());
-        userDto.setUserPassword(user.getUserPassword());
         userDto.setUserSurname(user.getUserSurname());
 
         return userDto;
@@ -81,7 +80,6 @@ public class UserMapper {
         userDetailsDto.setUserSurname(user.getUserSurname());
         userDetailsDto.setUserEmail(user.getUserEmail());
         userDetailsDto.setCodiceFiscale(user.getCodiceFiscale());
-        userDetailsDto.setUserPassword(user.getUserPassword());
         userDetailsDto.setPhoneNumber(user.getPhoneNumber());
         userDetailsDto.setRegistrationDate(user.getRegistrationDate());
         userDetailsDto.setLastLogin(user.getLastLogin());
@@ -103,7 +101,6 @@ public class UserMapper {
                     userDto.setPhoneNumber(user.getPhoneNumber());
                     userDto.setUserEmail(user.getPhoneNumber());
                     userDto.setUserName(user.getUserName());
-                    userDto.setUserPassword(user.getUserPassword());
                     userDto.setUserSurname(user.getUserSurname());
                     return userDto;
 
