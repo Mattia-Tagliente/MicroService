@@ -22,7 +22,7 @@ public class TicketStatusDto {
         return postDate;
     }
 
-    public void setTimestamp(Timestamp postDate) {
+    public void setPostDate(Timestamp postDate) {
         this.postDate = postDate;
     }
 
