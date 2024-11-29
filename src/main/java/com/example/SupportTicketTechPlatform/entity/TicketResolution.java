@@ -25,14 +25,14 @@ public class TicketResolution {
     @JoinColumn(name = "ticket_id", nullable = false)
     private Ticket ticket;
 
-    @Column(name = "resolution_post", nullable = false)
+    @Column(name = "resolution_note", nullable = false)
     private String resolutionPost;
 
-    @Column(name = "post_date", nullable = false)
+    @Column(name = "note_date", nullable = false)
     private Timestamp postDate;
 
     @ManyToOne
-    @JoinColumn(name = "admin_id", nullable = false)
+    @JoinColumn(name = "note_author", nullable = false)
     private User admin;
 
     public TicketResolution() {

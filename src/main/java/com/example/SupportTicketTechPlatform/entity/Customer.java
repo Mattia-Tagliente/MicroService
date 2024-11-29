@@ -16,10 +16,10 @@ public class Customer {
     @Column(name = "customer_id")
     private int customerId;
 
-    @Column(name = "denominazione_sociale")
+    @Column(name = "company_name")
     private String companyName;
 
-    @Column(name = "partita_iva")
+    @Column(name = "vat_number")
     private String vatNumber;
 
     public Customer() {
