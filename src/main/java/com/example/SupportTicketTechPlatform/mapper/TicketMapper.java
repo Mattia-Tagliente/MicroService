@@ -12,7 +12,7 @@ import com.example.SupportTicketTechPlatform.entity.Ticket;
 
 public class TicketMapper {
 
-    TicketDto toDto(Ticket ticketEntity){
+    public TicketDto toDto(Ticket ticketEntity){
         
         TicketDto ticketDto = new TicketDto();
 
@@ -28,7 +28,7 @@ public class TicketMapper {
 
     }
 
-    List<TicketDto> toDto(Iterable<Ticket> tickets){
+    public List<TicketDto> toDto(Iterable<Ticket> tickets){
 
         return StreamSupport.stream(tickets.spliterator(), false)
                 .map(ticket -> {
@@ -40,7 +40,7 @@ public class TicketMapper {
                 .collect(Collectors.toList());   
     }
 
-    Ticket toEntity(NewTicketDto newTicketDto, Customer customer){
+    public Ticket toEntity(NewTicketDto newTicketDto, Customer customer){
         
         Ticket newTicketEntity = new Ticket();
 

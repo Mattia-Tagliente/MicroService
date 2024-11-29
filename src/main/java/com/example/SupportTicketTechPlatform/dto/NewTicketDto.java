@@ -5,7 +5,7 @@ import java.sql.Timestamp;
 public class NewTicketDto {
 
     private String ticketCode;
-    private int customerId;
+    private String customerVatNumber;
     private String ticketName;
     private String ticketDescription;
     private Timestamp issueDate;
@@ -21,12 +21,12 @@ public class NewTicketDto {
         this.ticketCode = ticketCode;
     }
 
-    public int getCustomerId() {
-        return customerId;
+    public String getCustomerVatNumber() {
+        return customerVatNumber;
     }
 
-    public void setCustomerId(int customerId) {
-        this.customerId = customerId;
+    public void setCustomerId(String customerVatNumber) {
+        this.customerVatNumber = customerVatNumber;
     }
 
     public String getTicketName() {

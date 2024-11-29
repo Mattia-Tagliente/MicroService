@@ -10,7 +10,7 @@ import com.example.SupportTicketTechPlatform.entity.StatusType;
 
 public class StatusTypeMapper {
 
-    StatusTypeDto toDto(StatusType statusTypeEntity){
+    public StatusTypeDto toDto(StatusType statusTypeEntity){
 
         StatusTypeDto statusTypeDto = new StatusTypeDto();
 
@@ -20,7 +20,7 @@ public class StatusTypeMapper {
         return statusTypeDto;
     }
 
-    List<StatusTypeDto> toDto(Iterable<StatusType> statusTypes){
+    public List<StatusTypeDto> toDto(Iterable<StatusType> statusTypes){
 
         return StreamSupport.stream(statusTypes.spliterator(), false)
                 .map(statusType -> {

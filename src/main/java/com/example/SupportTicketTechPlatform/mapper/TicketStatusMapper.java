@@ -23,7 +23,7 @@ public class TicketStatusMapper {
         return statusDto;
     }
 
-    List<TicketStatusDto> toDto(Iterable<TicketStatus> statuses){
+    public List<TicketStatusDto> toDto(Iterable<TicketStatus> statuses){
         return StreamSupport.stream(statuses.spliterator(), false)
         .map(status -> {
             

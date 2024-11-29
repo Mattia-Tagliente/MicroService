@@ -11,7 +11,7 @@ import com.example.SupportTicketTechPlatform.entity.Customer;
 
 public class CustomerMapper {
 
-    CustomerDto toDto(Customer customerEntity){
+    public CustomerDto toDto(Customer customerEntity){
 
         CustomerDto customerDto = new CustomerDto();
 
@@ -21,7 +21,7 @@ public class CustomerMapper {
         return customerDto;
     }
 
-    List<CustomerDto> toDto(Iterable<Customer> customers){
+    public List<CustomerDto> toDto(Iterable<Customer> customers){
         
         return StreamSupport.stream(customers.spliterator(), false)
                 .map(customer -> {

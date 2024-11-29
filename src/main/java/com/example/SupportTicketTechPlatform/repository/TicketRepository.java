@@ -13,5 +13,8 @@ public interface TicketRepository extends JpaRepository<Ticket, Integer> {
     @Query("SELECT t FROM Ticket t WHERE t.customer.vatNumber = ?1")
     List<Ticket> findTicketByCustomerVatNumber(String customerVatNumber);
 
+    @Query("SELECT t FROM Ticket t WHERE t.ticketCode = ?1")
+    Ticket findTicketByTicketCode(String ticketCode);
+
     
 }
