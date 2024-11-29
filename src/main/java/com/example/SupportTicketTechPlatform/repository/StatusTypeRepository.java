@@ -6,4 +6,6 @@ import com.example.SupportTicketTechPlatform.entity.StatusType;
 
 public interface StatusTypeRepository extends JpaRepository<StatusType,Integer> {
 
+    
+
 }
