@@ -1,11 +1,14 @@
 package com.example.SupportTicketTechPlatform.dto;
 
+import java.sql.Timestamp;
+
 public class NewTicketDto {
 
     private String ticketCode;
     private int customerId;
     private String ticketName;
     private String ticketDescription;
+    private Timestamp issueDate;
     
     public NewTicketDto() {
     }
@@ -40,6 +43,14 @@ public class NewTicketDto {
 
     public void setTicketDescription(String ticketDescription) {
         this.ticketDescription = ticketDescription;
+    }
+
+    public Timestamp getIssueDate() {
+        return issueDate;
+    }
+
+    public void setIssueDate(Timestamp issueDate) {
+        this.issueDate = issueDate;
     }
 
     

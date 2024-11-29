@@ -9,8 +9,8 @@ import com.example.SupportTicketTechPlatform.entity.Ticket;
 
 public interface TicketRepository extends JpaRepository<Ticket, Integer> {
 
-    @Query("SELECT t FROM Ticket t WHERE t.customer.customerId = ?1")
-    Optional<Ticket> findTicketByCustomerId(int customerId);
+    @Query("SELECT t FROM Ticket t WHERE t.customer.vatNumber = ?1")
+    Optional<Ticket> findTicketByCustomerVatNumber(String customerVatNumber);
 
     
 }

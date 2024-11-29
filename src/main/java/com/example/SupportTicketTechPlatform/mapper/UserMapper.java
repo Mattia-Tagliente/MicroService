@@ -82,7 +82,7 @@ public class UserMapper {
                     UserDto userDto = new UserDto();
                     userDto.setCodiceFiscale(user.getCodiceFiscale());
                     if (userCustomer != null){
-                        userDto.setCompanyName(userCustomer.getDenominazioneSociale());
+                        userDto.setCompanyName(userCustomer.getCompanyName());
                     } else {
                         userDto.setCompanyName(null);
                     }

@@ -25,10 +25,6 @@ public class TicketResolution {
     @JoinColumn(name = "ticket_id", nullable = false)
     private Ticket ticket;
 
-    @ManyToOne
-    @JoinColumn(name = "task_type", nullable = false)
-    private TaskType taskType;
-
     @Column(name = "resolution_post", nullable = false)
     private String resolutionPost;
 
@@ -56,14 +52,6 @@ public class TicketResolution {
 
     public void setTicket(Ticket ticket) {
         this.ticket = ticket;
-    }
-
-    public TaskType getTaskType() {
-        return taskType;
-    }
-
-    public void setTaskType(TaskType taskType) {
-        this.taskType = taskType;
     }
 
     public String getResolutionPost() {

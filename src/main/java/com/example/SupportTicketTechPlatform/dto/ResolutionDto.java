@@ -4,7 +4,6 @@ import java.sql.Timestamp;
 
 public class ResolutionDto {
 
-    private String taskName;
     private String resolutionPost;
     private Timestamp postDate;
     private String adminName;
@@ -14,13 +13,6 @@ public class ResolutionDto {
     public ResolutionDto() {
     }
 
-    public String getTaskName() {
-        return taskName;
-    }
-
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
-    }
 
     public String getResolutionPost() {
         return resolutionPost;

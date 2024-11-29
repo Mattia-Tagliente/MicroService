@@ -5,7 +5,6 @@ import java.sql.Timestamp;
 public class NewResolutionDto {
 
     private int ticketId;
-    private int taskTypeId;
     private String resolutionPost;
     private Timestamp postDate;
     private int adminId;
@@ -21,13 +20,6 @@ public class NewResolutionDto {
         this.ticketId = ticketId;
     }
 
-    public int getTaskTypeId() {
-        return taskTypeId;
-    }
-
-    public void setTaskTypeId(int taskTypeId) {
-        this.taskTypeId = taskTypeId;
-    }
 
     public String getResolutionPost() {
         return resolutionPost;
