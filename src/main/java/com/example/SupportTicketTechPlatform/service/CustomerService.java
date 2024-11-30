@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.example.SupportTicketTechPlatform.dto.CustomerDto;
+import com.example.SupportTicketTechPlatform.dto.NewCustomerDto;
 import com.example.SupportTicketTechPlatform.entity.Customer;
 import com.example.SupportTicketTechPlatform.mapper.CustomerMapper;
 import com.example.SupportTicketTechPlatform.repository.CustomerRepository;
@@ -19,13 +20,13 @@ public class CustomerService {
     @Autowired
     CustomerRepository customerRepository;
 
-    List<CustomerDto>  getAllCustomers(){
+    public List<CustomerDto>  getAllCustomers(){
 
         return customerMapper.toDto(customerRepository.findAll());
 
     }
 
-    Optional<CustomerDto> getCustomer(String vatNumber){
+    public Optional<CustomerDto> getCustomer(String vatNumber){
 
         Optional<Customer> customerEntity = customerRepository.findCustomerByVatNumber(vatNumber);
 
@@ -36,6 +37,21 @@ public class CustomerService {
         CustomerDto customerDto = customerMapper.toDto(customerEntity.get());
         Optional<CustomerDto>  optional = Optional.of(customerDto);
         return optional;
+    }
+
+    public boolean addCustomer(NewCustomerDto newCustomerDto){
+
+        String vatNumber = newCustomerDto.getVatNumber();
+        Optional<CustomerDto> customer = getCustomer(vatNumber);
+        if (customer.isEmpty()){
+
+            customerRepository.save(customerMapper.toEntity(newCustomerDto));
+            return true;
+            
+        }
+
+        return false;
+        
     }
 
 }

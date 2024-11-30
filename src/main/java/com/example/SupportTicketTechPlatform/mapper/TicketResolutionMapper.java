@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import org.springframework.stereotype.Component;
+
 import com.example.SupportTicketTechPlatform.dto.NewResolutionDto;
 import com.example.SupportTicketTechPlatform.dto.ResolutionDto;
 import com.example.SupportTicketTechPlatform.dto.UserDto;
@@ -12,9 +14,10 @@ import com.example.SupportTicketTechPlatform.entity.Ticket;
 import com.example.SupportTicketTechPlatform.entity.TicketResolution;
 import com.example.SupportTicketTechPlatform.entity.User;
 
+@Component
 public class TicketResolutionMapper {
 
-    ResolutionDto toDto(TicketResolution resolutionEntity){
+    public ResolutionDto toDto(TicketResolution resolutionEntity){
 
         ResolutionDto resolutionDto = new ResolutionDto();
 
@@ -23,14 +26,14 @@ public class TicketResolutionMapper {
         resolutionDto.setAdminEmail(admin.getUserEmail());
         resolutionDto.setAdminName(admin.getUserName());
         resolutionDto.setAdminSurname(admin.getUserSurname());
-        resolutionDto.setPostDate(resolutionEntity.getPostDate());
-        resolutionDto.setResolutionPost(resolutionEntity.getResolutionPost());
+        resolutionDto.setNoteDate(resolutionEntity.getNoteDate());
+        resolutionDto.setResolutionNote(resolutionEntity.getResolutionNote());
 
         return resolutionDto;
 
     }
 
-    List<ResolutionDto> toDto(Iterable<TicketResolution> resolutions){
+    public List<ResolutionDto> toDto(Iterable<TicketResolution> resolutions){
         return StreamSupport.stream(resolutions.spliterator(), false)
                 .map(resolution -> {
 
@@ -41,14 +44,14 @@ public class TicketResolutionMapper {
                 .collect(Collectors.toList());        
     }
 
-    TicketResolution toEntity(NewResolutionDto newTicket, Ticket ticket, User admin){
+    public TicketResolution toEntity(NewResolutionDto newTicket, Ticket ticket, User admin){
 
         TicketResolution newResolutionEntity = new TicketResolution();
 
         newResolutionEntity.setAdmin(admin);
         newResolutionEntity.setTicket(ticket);
-        newResolutionEntity.setPostDate(newTicket.getPostDate());
-        newResolutionEntity.setResolutionPost(newTicket.getResolutionPost());
+        newResolutionEntity.setNoteDate(newTicket.getNoteDate());
+        newResolutionEntity.setResolutionNote(newTicket.getResolutionNote());
 
         return newResolutionEntity;
         

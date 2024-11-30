@@ -4,45 +4,45 @@ import java.sql.Timestamp;
 
 public class NewResolutionDto {
 
-    private int ticketId;
-    private String resolutionPost;
-    private Timestamp postDate;
-    private int adminId;
+    private String ticketCode;
+    private String resolutionNote;
+    private Timestamp  noteDate;
+    private String adminUsername;
     
     public NewResolutionDto() {
     }
 
-    public int getTicketId() {
-        return ticketId;
+    public String getTicketCode() {
+        return ticketCode;
     }
 
-    public void setTicketId(int ticketId) {
-        this.ticketId = ticketId;
+    public void setTicketCode(String ticketCode) {
+        this.ticketCode = ticketCode;
     }
 
 
-    public String getResolutionPost() {
-        return resolutionPost;
+    public String getResolutionNote() {
+        return resolutionNote;
     }
 
-    public void setResolutionPost(String resolutionPost) {
-        this.resolutionPost = resolutionPost;
+    public void setResolutionPost(String resolutionNote) {
+        this.resolutionNote = resolutionNote;
     }
 
-    public Timestamp getPostDate() {
-        return postDate;
+    public Timestamp getNoteDate() {
+        return noteDate;
     }
 
-    public void setPostDate(Timestamp postDate) {
-        this.postDate = postDate;
+    public void setNoteDate(Timestamp noteDate) {
+        this.noteDate = noteDate;
     }
 
-    public int getAdminId() {
-        return adminId;
+    public String getAdminUsername() {
+        return adminUsername;
     }
 
-    public void setAdminId(int adminId) {
-        this.adminId = adminId;
+    public void setAdminUsername(String adminUsername) {
+        this.adminUsername = adminUsername;
     }
 
     

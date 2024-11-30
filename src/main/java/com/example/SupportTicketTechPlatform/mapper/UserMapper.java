@@ -23,11 +23,10 @@ public class UserMapper {
         newUserEntity.setUserName(newUserDto.getUserName());
         newUserEntity.setUserSurname(newUserDto.getUserSurname());
         newUserEntity.setUserEmail(newUserDto.getUserEmail());
-        newUserEntity.setCodiceFiscale(newUserDto.getCodiceFiscale());
+        newUserEntity.setCodiceFiscale(newUserDto.getFiscalCode());
         newUserEntity.setUserPassword(newUserDto.getUserPassword());
         newUserEntity.setPhoneNumber(newUserDto.getPhoneNumber());
         newUserEntity.setRegistrationDate(newUserDto.getRegistrationDate());
-        newUserEntity.setLastLogin(newUserDto.getRegistrationDate());
         newUserEntity.setCustomer(customer);
         newUserEntity.setAdminRole(newUserDto.getAdminRole());
 
@@ -43,11 +42,10 @@ public class UserMapper {
         newUserEntity.setUserName(newUserDto.getUserName());
         newUserEntity.setUserSurname(newUserDto.getUserSurname());
         newUserEntity.setUserEmail(newUserDto.getUserEmail());
-        newUserEntity.setCodiceFiscale(newUserDto.getCodiceFiscale());
+        newUserEntity.setCodiceFiscale(newUserDto.getFiscalCode());
         newUserEntity.setUserPassword(newUserDto.getUserPassword());
         newUserEntity.setPhoneNumber(newUserDto.getPhoneNumber());
         newUserEntity.setRegistrationDate(newUserDto.getRegistrationDate());
-        newUserEntity.setLastLogin(newUserDto.getRegistrationDate());
         newUserEntity.setAdminRole(newUserDto.getAdminRole());
 
         return newUserEntity;

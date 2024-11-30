@@ -32,7 +32,7 @@ public class User {
     @Column(name = "user_email")
     private String userEmail;
 
-    @Column(name = "codice_fiscale")
+    @Column(name = "fiscal_code")
     private String codiceFiscale;
 
     @Column(name = "user_password")

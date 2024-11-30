@@ -5,11 +5,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import org.springframework.stereotype.Component;
+
 import com.example.SupportTicketTechPlatform.dto.NewTicketDto;
 import com.example.SupportTicketTechPlatform.dto.TicketDto;
 import com.example.SupportTicketTechPlatform.entity.Customer;
 import com.example.SupportTicketTechPlatform.entity.Ticket;
 
+@Component
 public class TicketMapper {
 
     public TicketDto toDto(Ticket ticketEntity){

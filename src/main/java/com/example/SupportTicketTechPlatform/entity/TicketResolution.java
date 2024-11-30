@@ -26,10 +26,10 @@ public class TicketResolution {
     private Ticket ticket;
 
     @Column(name = "resolution_note", nullable = false)
-    private String resolutionPost;
+    private String resolutionNote;
 
     @Column(name = "note_date", nullable = false)
-    private Timestamp postDate;
+    private Timestamp noteDate;
 
     @ManyToOne
     @JoinColumn(name = "note_author", nullable = false)
@@ -54,20 +54,20 @@ public class TicketResolution {
         this.ticket = ticket;
     }
 
-    public String getResolutionPost() {
-        return resolutionPost;
+    public String getResolutionNote() {
+        return resolutionNote;
     }
 
-    public void setResolutionPost(String resolutionPost) {
-        this.resolutionPost = resolutionPost;
+    public void setResolutionNote(String resolutionNote) {
+        this.resolutionNote = resolutionNote;
     }
 
-    public Timestamp getPostDate() {
-        return postDate;
+    public Timestamp getNoteDate() {
+        return noteDate;
     }
 
-    public void setPostDate(Timestamp postDate) {
-        this.postDate = postDate;
+    public void setNoteDate(Timestamp noteDate) {
+        this.noteDate = noteDate;
     }
 
     public User getAdmin() {

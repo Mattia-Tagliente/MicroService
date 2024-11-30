@@ -4,8 +4,8 @@ import java.sql.Timestamp;
 
 public class ResolutionDto {
 
-    private String resolutionPost;
-    private Timestamp postDate;
+    private String resolutionNote;
+    private Timestamp noteDate;
     private String adminName;
     private String adminSurname;
     private String adminEmail;
@@ -14,20 +14,20 @@ public class ResolutionDto {
     }
 
 
-    public String getResolutionPost() {
-        return resolutionPost;
+    public String getResolutionNote() {
+        return resolutionNote;
     }
 
-    public void setResolutionPost(String resolutionPost) {
-        this.resolutionPost = resolutionPost;
+    public void setResolutionNote(String resolutionNote) {
+        this.resolutionNote = resolutionNote;
     }
 
-    public Timestamp getPostDate() {
-        return postDate;
+    public Timestamp getNoteDate() {
+        return noteDate;
     }
 
-    public void setPostDate(Timestamp postDate) {
-        this.postDate = postDate;
+    public void setNoteDate(Timestamp noteDate) {
+        this.noteDate = noteDate;
     }
 
     public String getAdminName() {

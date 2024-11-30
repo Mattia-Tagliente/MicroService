@@ -53,14 +53,14 @@ public class UserController {
 
 
     @PostMapping("/register")
-    public ResponseEntity<Boolean> addUser(@RequestBody NewUserDto newUser){
+    public ResponseEntity<Void> addUser(@RequestBody NewUserDto newUser){
 
         boolean result = userService.addUser(newUser);
 
         if(result == false){
-            return new ResponseEntity<>(HttpStatus.I_AM_A_TEAPOT);
+            return new ResponseEntity<>(HttpStatus.UNAUTHORIZED);
         }
-        return new ResponseEntity<>(result, HttpStatus.OK);
+        return new ResponseEntity<>(HttpStatus.CREATED);
 
     }
 }

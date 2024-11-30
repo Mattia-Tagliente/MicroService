@@ -8,12 +8,11 @@ public class NewUserDto {
     private String userName;
     private String userSurname;
     private String userEmail;
-    private String codiceFiscale;
+    private String fiscalCode;
     private String userPassword;
     private String phoneNumber;
     private Timestamp registrationDate;
-    private Timestamp lastLogin;
-    private Integer customerId;
+    private String customerVat;
     private int adminRole;
     
     public NewUserDto() {
@@ -51,12 +50,12 @@ public class NewUserDto {
         this.userEmail = userEmail;
     }
 
-    public String getCodiceFiscale() {
-        return codiceFiscale;
+    public String getFiscalCode() {
+        return fiscalCode;
     }
 
-    public void setCodiceFiscale(String codiceFiscale) {
-        this.codiceFiscale = codiceFiscale;
+    public void setCodiceFiscale(String fiscalCode) {
+        this.fiscalCode = fiscalCode;
     }
 
     public String getUserPassword() {
@@ -83,20 +82,13 @@ public class NewUserDto {
         this.registrationDate = registrationDate;
     }
 
-    public Timestamp getLastLogin() {
-        return lastLogin;
+
+    public String getCustomerVat() {
+        return customerVat;
     }
 
-    public void setLastLogin(Timestamp lastLogin) {
-        this.lastLogin = lastLogin;
-    }
-
-    public Integer getCustomerId() {
-        return customerId;
-    }
-
-    public void setCustomerId(Integer customerId) {
-        this.customerId = customerId;
+    public void setCustomerId(String customerVat) {
+        this.customerVat = customerVat;
     }
 
     public int getAdminRole() {

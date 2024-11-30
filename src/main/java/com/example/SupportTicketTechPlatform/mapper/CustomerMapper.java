@@ -4,11 +4,14 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import org.springframework.stereotype.Component;
+
 import com.example.SupportTicketTechPlatform.dto.CustomerDto;
 import com.example.SupportTicketTechPlatform.dto.NewCustomerDto;
 import com.example.SupportTicketTechPlatform.dto.StatusTypeDto;
 import com.example.SupportTicketTechPlatform.entity.Customer;
 
+@Component
 public class CustomerMapper {
 
     public CustomerDto toDto(Customer customerEntity){
@@ -34,12 +37,12 @@ public class CustomerMapper {
 
     }
 
-    Customer toEntity(NewCustomerDto newCustomerDto){
+    public Customer toEntity(NewCustomerDto newCustomerDto){
 
         Customer newCustomerEntity = new Customer();
 
         newCustomerEntity.setCompanyName(newCustomerDto.getCompanyName());
-        newCustomerEntity.setCompanyName(newCustomerDto.getVatNumber());
+        newCustomerEntity.setVatNumber(newCustomerDto.getVatNumber());
 
         return newCustomerEntity;
 

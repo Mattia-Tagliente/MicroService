@@ -4,10 +4,13 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.StreamSupport;
 
+import org.springframework.stereotype.Component;
+
 import com.example.SupportTicketTechPlatform.dto.StatusTypeDto;
 import com.example.SupportTicketTechPlatform.dto.TicketDto;
 import com.example.SupportTicketTechPlatform.entity.StatusType;
 
+@Component
 public class StatusTypeMapper {
 
     public StatusTypeDto toDto(StatusType statusTypeEntity){

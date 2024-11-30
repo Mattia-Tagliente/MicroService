@@ -4,9 +4,12 @@ import java.util.List;
 import java.util.Optional;
 
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 
 import com.example.SupportTicketTechPlatform.entity.Ticket;
+
+import jakarta.transaction.Transactional;
 
 public interface TicketRepository extends JpaRepository<Ticket, Integer> {
 
@@ -14,7 +17,10 @@ public interface TicketRepository extends JpaRepository<Ticket, Integer> {
     List<Ticket> findTicketByCustomerVatNumber(String customerVatNumber);
 
     @Query("SELECT t FROM Ticket t WHERE t.ticketCode = ?1")
-    Ticket findTicketByTicketCode(String ticketCode);
+    Optional<Ticket> findTicketByTicketCode(String ticketCode);
 
-    
+    @Modifying
+    @Transactional
+    @Query("DELETE FROM Ticket t WHERE t.ticketCode = ?1")
+    void removeTicket(String ticketCode);
 }
